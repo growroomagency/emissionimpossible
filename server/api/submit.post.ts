@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
         body.score >= 0 && 
         body.score <= 10 && (
             body.url == null || (
-                body.url.length > 0 && 
+                body.url.length >= 0 && 
                 body.url.length <= 512
             )
         )
