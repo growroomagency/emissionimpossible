@@ -1,0 +1,77 @@
+:root {
+    @apply font-poppins;
+    
+    /* colors */
+    --sig-green: #425d44;
+    --sig-accent: #ffc01e;
+    --sig-gray: #797673;
+    --sig-placeholder: #ababab;
+    --sig-whiteish: #f3f3f3;
+
+    /* transitions */
+    interpolate-size: allow-keywords;
+}
+
+/* transition */
+.fade-enter-from,
+.fade-leave-to {
+    @apply opacity-0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    @apply transition-opacity duration-300;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+    @apply opacity-100;
+}
+
+/* animation */
+@keyframes bounce-3times {
+    0%,
+    100% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    50% {
+        transform: translateY(-10%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+}
+
+/* coponents */
+:root {
+    --card-width: min(80vw, 310px);
+}
+
+@media screen and (min-width: 720px) {
+    :root {
+        --card-width: min(40vw, 310px);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    :root {
+        --card-width: 24rem;
+    }
+}
+
+.element-card-base {
+    @apply select-none;
+    @apply bg-white shadow-md rounded-xl cursor-pointer;
+    @apply flex flex-col gap-2 md:gap-4 items-center justify-start pt-4;
+    @apply transition-all duration-300;
+
+    width: var(--card-width);
+    min-height: max-content;
+}
+
+@keyframes animate-shaking {
+ 0% { transform: translateX(0) }
+ 25% { transform: translateX(2px) }
+ 50% { transform: translateX(-2px) }
+ 75% { transform: translateX(2px) }
+ 100% { transform: translateX(0) }
+}
